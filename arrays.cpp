@@ -10,7 +10,9 @@
  *    - Read the code and think about what it'll do.
  *        - What will happen for the part where it prints the array itself?
  *    - Compile and run the program.
- *        - Did it do what you expected?
+ *        - Did it do what you expected?  (You may need to scroll up to see
+ *          the output of the first part; you could expand the terminal window
+ *          to make it easier to see).
  *    - Change array access to use the * operator instead of [].
  *        - Remember the form a[i] is equvalent to *( ... ) <- figure it out
  *        - You can just change that initializes the array if you like.
@@ -19,16 +21,26 @@
  *        - Before you compile, speculate about whether this will compile,
  *          and if so so, whether it will work the same and why?
  *        - Compile, link and run to find out.
- *    - Change the for loop to incorrectly use <= instead of <
+ *    - Change the array indexing back to normal.
+ *    - Change the first for loop to be `< ARRAY_SIZE+4`, overstepping the
+ *      bounds of the array.
  *        - Why is this "illegal" in C++'s world?  Results in...
  *        - BEFORE you run it, speculate about what will happen with partner(s)
  *        - Compile, link and run it.
  *        - What is *so* bad about this?
- *        - WHat is *good* about it?
+ *        - What is *good* about it?
+ *    - Change `x` and `y` to be `float` instead of `int`.
+ *        - BEFORE you run it, speculate about what will happen with partner(s)
+ *        - Compile, link and run it.
+ *        - Did this change anything?
  *    - Run the program with using valgrind:   valgrind ./arrays
  *        - Did this help?
  *    - Rerun clang commands adding: -fsanitize=undefined,address,bounds to
- *      both clang++ commands
+ *      both clang++ commands, like this:
+        clang++ -fsanitize=undefined,address,bounds -std=c++17 -Wall -Wextra \
+          -pedantic -c arrays.cpp && \
+        clang++ -fsanitize=undefined,address,bounds -o arrays arrays.o && \
+        ./arrays
  *        - Add this option to the very front of BOTH clang++ commands
  *        - Did this help?
  */
