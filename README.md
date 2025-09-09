@@ -10,7 +10,7 @@ You need to work with this code in Visual Studio Code. Do the following:
         - When prompted, enter your password
         - If you're connected, it'll show `cs70.cs.hmc.edu` in the bottom left corner of the window.
     - Once connected, click “Clone Git Repository...” in the main panel of the window and paste in the URL you copied above.
-        - Choose your `cs70` subdirectory as the location to clone into.
+        - Choose your `/cs70/fall2025/week3lab1/sect2/groupN` subdirectory as the location to clone into (where `N` is your group number).
         - If you're not already authenticated with GitHub, it'll ask you to sign in. Follow the prompts to do so.
         - If it get's stuck on a blank page in the web browser, in VS code click cancel, and then it'll offer to try another method. Choose that and it should work.
     - Once cloned, it'll ask “Would you like to open the cloned repository?”. Click “Open” (and answer yes to the trust question).
