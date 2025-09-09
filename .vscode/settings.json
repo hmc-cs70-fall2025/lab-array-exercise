@@ -1,5 +1,8 @@
 {
     "files.eol": "\n",
     "liveshare.increasedGuestLimit": false,
-    "liveshare.populateGitCoAuthors": "always"
+    "liveshare.populateGitCoAuthors": "always",
+    "files.associations": {
+        "cstddef": "cpp"
+    }
 }

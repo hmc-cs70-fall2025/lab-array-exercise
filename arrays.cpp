@@ -43,6 +43,15 @@
         ./arrays
  *        - Add this option to the very front of BOTH clang++ commands
  *        - Did this help?
+ *    - Try changing the compiler to `g++` instead of `clang++`, like this:
+        g++ -std=c++17 -Wall -Wextra -pedantic -c arrays.cpp && \
+        g++ -o arrays arrays.o && \
+        ./arrays
+ *        - How are the results different from what you saw with clang++?
+ *        - You could try adding the same -fsanitize=undefined,address,bounds 
+ *          to the g++ commands, but it'll be pretty similar to clang++.
+ *    - Discuss: What does this tell you about C++, arrays and undefined
+ *      behavior?
  */
 
 #include <iostream>
