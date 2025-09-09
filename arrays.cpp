@@ -1,18 +1,24 @@
 /*
  * C++ Program to demonstrate the use of arrays.
  *
- * compile and run with with: 
-       clang++ -std=c++17 -Wall -Wextra -pedantic -c arrays.cpp
-       clang++ -o arrays arrays.o
+ * compile and run with with (paste all three lines at once in your terminal): 
+       clang++ -std=c++17 -Wall -Wextra -pedantic -c arrays.cpp && \
+       clang++ -o arrays arrays.o && \
        ./arrays
  *
  * Your task:
+ *    - Read the code and think about what it'll do.
+ *        - What will happen for the part where it prints the array itself?
  *    - Compile and run the program.
- *    - Read the code and understand what it does.
+ *        - Did it do what you expected?
  *    - Change array access to use the * operator instead of [].
  *        - Remember the form a[i] is equvalent to *( ... ) <- figure it out
+ *        - You can just change that initializes the array if you like.
  *        - Compile, link and run it to check it works the same.
- *        - Change it back after.
+ *    - Change the array indexing to be i[numbers] instead of numbers[i]
+ *        - Before you compile, speculate about whether this will compile,
+ *          and if so so, whether it will work the same and why?
+ *        - Compile, link and run to find out.
  *    - Change the for loop to incorrectly use <= instead of <
  *        - Why is this "illegal" in C++'s world?  Results in...
  *        - BEFORE you run it, speculate about what will happen with partner(s)
@@ -21,7 +27,8 @@
  *        - WHat is *good* about it?
  *    - Run the program with using valgrind:   valgrind ./arrays
  *        - Did this help?
- *    - Rerun clang commands adding: -fsanitize=undefined,address,bounds
+ *    - Rerun clang commands adding: -fsanitize=undefined,address,bounds to
+ *      both clang++ commands
  *        - Add this option to the very front of BOTH clang++ commands
  *        - Did this help?
  */
@@ -35,14 +42,21 @@ int main() {
     int numbers[ARRAY_SIZE];
     int y = 54;
 
+    // Initialize the array
     for (size_t i = 0; i < ARRAY_SIZE; ++i) {
         numbers[i] = int(i) + 100;
     }
 
+    // Print the array itself
+    std::cout << numbers << std::endl;
+
+    // Print the array elements
     for (size_t j = 0; j < ARRAY_SIZE; ++j) {
         std::cout << "Element at index " << j << " : "
                   << numbers[j] << std::endl;
     }
+
+    // Print x and y to show they are unchanged
     std::cout << "x == " << x << ", y == " << y << std::endl;
 
     return 0;
