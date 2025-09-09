@@ -20,8 +20,8 @@ You need to work with this code in Visual Studio Code. Do the following:
 
 As a reminder (and for easy copy-and-pasting), once you have the code open in VS code, you can build and run the code by running:
 
-    clang++ -std=c++17 -Wall -Wextra -pedantic -c arrays.cpp
-    clang++ -o arrays arrays.o
+    clang++ -std=c++17 -Wall -Wextra -pedantic -c arrays.cpp && \
+    clang++ -o arrays arrays.o && \
     ./arrays
 
 ## Extra Bonus Fun for Lab
